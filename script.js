@@ -96,9 +96,15 @@ function calcular() {
     html += `<li>→ Pacotes de 100: <span class="destaque">${pacotes100} pacote(s)</span></li>`;
   } else {
     // Nivelador (pacotes de 50 ou 100) — usado em porcelanato e cerâmica retificado
-    const pacotes100 = Math.floor(espacadores / 100);
-    const resto = espacadores % 100;
-    const pacotes50 = resto > 0 ? Math.ceil(resto / 50) : 0;
+    let pacotes100 = Math.floor(espacadores / 100);
+    let resto = espacadores % 100;
+    let pacotes50 = resto > 0 ? Math.ceil(resto / 50) : 0;
+
+    // Se sobrou 2 pacotes de 50 (equivalente a 100), vira mais um de 100
+    if (pacotes50 === 2) {
+      pacotes100 += 1;
+      pacotes50 = 0;
+    }
 
     html += `<li>Espaçador Nivelador: <span class="destaque">${espacadores} unidades</span></li>`;
     html += `<li>→ Sugestão de pacotes: `;
