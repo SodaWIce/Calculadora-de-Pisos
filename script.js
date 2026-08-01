@@ -30,6 +30,7 @@ function getFator(tamanho) {
   if (fatores[tamanho]) return fatores[tamanho];
 
   // Fallback genérico (caso algum tamanho não esteja na tabela)
+  // Prioriza sempre os valores da tabela quando disponíveis
   const lados = tamanho.split("x").map(Number);
   const ladoMedio = (lados[0] + lados[1]) / 2;
   return 100 / (ladoMedio * 1.8);
@@ -68,12 +69,16 @@ function calcular() {
 
   // ===== ARGAMASSA =====
   if (tipo === "porcelanato") {
+    // Porcelanato: 1 saco a cada 3 m² (sem grátis)
     const argamassa = Math.ceil(area / 3);
     html += `<li>Argamassa necessária: <span class="destaque">${argamassa} saco(s)</span> (1 a cada 3 m²)</li>`;
   } else {
     // Cerâmica (retificado ou boleado)
-    const gratis = Math.ceil(area / 4);          // 1 a cada 4 m²
-    const totalNecessario = Math.ceil(area / 3); // 1 a cada 3 m²
+    // Grátis: 1 a cada 4 m²
+    // Total necessário (como se fosse 1 a cada 3 m²)
+    // Adicionais = total - grátis
+    const gratis = Math.ceil(area / 4);
+    const totalNecessario = Math.ceil(area / 3);
     const adicionais = Math.max(0, totalNecessario - gratis);
 
     html += `<li>Argamassa AC1 grátis: <span class="destaque">${gratis} saco(s)</span> (1 a cada 4 m²)</li>`;
@@ -90,7 +95,7 @@ function calcular() {
     html += `<li>Espaçador Cruzeta: <span class="destaque">${espacadores} unidades</span></li>`;
     html += `<li>→ Pacotes de 100: <span class="destaque">${pacotes100} pacote(s)</span></li>`;
   } else {
-    // Nivelador (pacotes de 50 ou 100)
+    // Nivelador (pacotes de 50 ou 100) — usado em porcelanato e cerâmica retificado
     const pacotes100 = Math.floor(espacadores / 100);
     const resto = espacadores % 100;
     const pacotes50 = resto > 0 ? Math.ceil(resto / 50) : 0;
