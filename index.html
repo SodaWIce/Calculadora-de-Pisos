@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Piso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Calculadora de Piso</h1>
+
+    <div class="formulario">
+
+        <!-- Metragem -->
+        <div class="campo">
+            <label for="metragem">Metragem (m²)</label>
+            <input type="number" id="metragem" placeholder="Ex: 27.5" step="0.01" min="0">
+        </div>
+
+        <!-- Tipo -->
+        <div class="campo">
+            <label for="tipoPiso">Tipo do Piso</label>
+            <select id="tipoPiso">
+                <option value="">Selecione</option>
+                <option value="ceramica">Cerâmica</option>
+                <option value="porcelanato">Porcelanato</option>
+            </select>
+        </div>
+
+        <!-- Acabamento (apenas Cerâmica) -->
+        <div class="campo" id="acabamentoContainer">
+            <label for="acabamento">Acabamento</label>
+            <select id="acabamento">
+                <option value="">Selecione</option>
+                <option value="retificado">Retificado</option>
+                <option value="boleado">Boleado</option>
+            </select>
+        </div>
+
+        <!-- Tamanho -->
+        <div class="campo">
+            <label for="tamanhoPiso">Tamanho do Piso</label>
+            <select id="tamanhoPiso">
+
+                <option value="">Selecione</option>
+
+                <option value="20x20">20x20 cm</option>
+                <option value="30x30">30x30 cm</option>
+                <option value="33x33">33x33 cm</option>
+                <option value="45x45">45x45 cm</option>
+                <option value="50x50">50x50 cm</option>
+                <option value="60x60">60x60 cm</option>
+                <option value="60x90">60x90 cm</option>
+                <option value="60x120">60x120 cm</option>
+                <option value="80x80">80x80 cm</option>
+                <option value="90x90">90x90 cm</option>
+                <option value="100x100">100x100 cm</option>
+                <option value="120x120">120x120 cm</option>
+                <option value="120x180">120x180 cm</option>
+
+            </select>
+        </div>
+
+        <button id="btnCalcular">
+            Calcular
+        </button>
+
+    </div>
+
+    <div class="resultado" id="resultado">
+
+        <h2>Resultado</h2>
+
+        <!-- Cerâmica Retificado -->
+        <div id="resultadoCeramicaRetificado" class="grupoResultado">
+
+            <div class="itemResultado">
+                <span>Argamassas AC1 Grátis</span>
+                <strong id="argamassaGratis">0</strong>
+            </div>
+
+            <div class="itemResultado">
+                <span>Argamassas Adicionais</span>
+                <strong id="argamassaAdicional">0</strong>
+            </div>
+
+            <div class="itemResultado">
+                <span>Rejuntes (1kg)</span>
+                <strong id="rejuntes">0</strong>
+            </div>
+
+            <div class="itemResultado">
+                <span>Espaçadores Nivelador</span>
+                <strong id="espacadoresNivelador">0</strong>
+            </div>
+
+            <div class="itemResultado">
+                <span>Cunhas</span>
+                <strong id="cunhas">0</strong>
+            </div>
+
+        </div>
+
+        <!-- Cerâmica Boleado -->
+        <div id="resultadoCeramicaBoleado" class="grupoResultado">
+
+            <div class="itemResultado">
+                <span>Argamassas AC1 Grátis</span>
+                <strong id="argamassaGratisBoleado">0</strong>
+            </div>
+
+            <div class="itemResultado">
+                <span>Argamassas Adicionais</span>
+                <strong id="argamassaAdicionalBoleado">0</strong>
+            </div>
+
+            <div class="itemResultado">
+                <span>Rejuntes (1kg)</span>
+                <strong id="rejuntesBoleado">0</strong>
+            </div>
+
+            <div class="itemResultado">
+                <span>Espaçador Cruzeta</span>
+                <strong id="cruzetas">0</strong>
+            </div>
+
+        </div>
+
+        <!-- Porcelanato -->
+        <div id="resultadoPorcelanato" class="grupoResultado">
+
+            <div class="itemResultado">
+                <span>Argamassas Necessárias</span>
+                <strong id="argamassaPorcelanato">0</strong>
+            </div>
+
+            <div class="itemResultado">
+                <span>Rejuntes (1kg)</span>
+                <strong id="rejuntesPorcelanato">0</strong>
+            </div>
+
+            <div class="itemResultado">
+                <span>Espaçadores Nivelador</span>
+                <strong id="espacadoresPorcelanato">0</strong>
+            </div>
+
+            <div class="itemResultado">
+                <span>Cunhas</span>
+                <strong id="cunhasPorcelanato">0</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
