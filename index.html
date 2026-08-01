@@ -17,7 +17,12 @@
         <!-- Metragem -->
         <div class="campo">
             <label for="metragem">Metragem (m²)</label>
-            <input type="number" id="metragem" placeholder="Ex: 27.5" step="0.01" min="0">
+            <input
+                type="number"
+                id="metragem"
+                min="0"
+                step="0.01"
+                placeholder="Ex: 28,5">
         </div>
 
         <!-- Tipo -->
@@ -30,7 +35,7 @@
             </select>
         </div>
 
-        <!-- Acabamento (apenas Cerâmica) -->
+        <!-- Acabamento -->
         <div class="campo" id="acabamentoContainer">
             <label for="acabamento">Acabamento</label>
             <select id="acabamento">
@@ -44,9 +49,7 @@
         <div class="campo">
             <label for="tamanhoPiso">Tamanho do Piso</label>
             <select id="tamanhoPiso">
-
                 <option value="">Selecione</option>
-
                 <option value="20x20">20x20 cm</option>
                 <option value="30x30">30x30 cm</option>
                 <option value="33x33">33x33 cm</option>
@@ -60,7 +63,6 @@
                 <option value="100x100">100x100 cm</option>
                 <option value="120x120">120x120 cm</option>
                 <option value="120x180">120x180 cm</option>
-
             </select>
         </div>
 
@@ -74,8 +76,9 @@
 
         <h2>Resultado</h2>
 
-        <!-- Cerâmica Retificado -->
-        <div id="resultadoCeramicaRetificado" class="grupoResultado">
+        <!-- CERÂMICA RETIFICADO -->
+
+        <div class="grupoResultado" id="resultadoCeramicaRetificado">
 
             <div class="itemResultado">
                 <span>Argamassas AC1 Grátis</span>
@@ -88,24 +91,30 @@
             </div>
 
             <div class="itemResultado">
-                <span>Rejuntes (1kg)</span>
+                <span>Rejuntes (1 kg)</span>
                 <strong id="rejuntes">0</strong>
             </div>
 
             <div class="itemResultado">
-                <span>Espaçadores Nivelador</span>
+                <span>Conjuntos Nivelador</span>
                 <strong id="espacadoresNivelador">0</strong>
             </div>
 
             <div class="itemResultado">
-                <span>Cunhas</span>
-                <strong id="cunhas">0</strong>
+                <span>Pacotes de 50</span>
+                <strong id="pacotes50">0</strong>
+            </div>
+
+            <div class="itemResultado">
+                <span>Pacotes de 100</span>
+                <strong id="pacotes100">0</strong>
             </div>
 
         </div>
 
-        <!-- Cerâmica Boleado -->
-        <div id="resultadoCeramicaBoleado" class="grupoResultado">
+        <!-- CERÂMICA BOLEADO -->
+
+        <div class="grupoResultado" id="resultadoCeramicaBoleado">
 
             <div class="itemResultado">
                 <span>Argamassas AC1 Grátis</span>
@@ -118,19 +127,25 @@
             </div>
 
             <div class="itemResultado">
-                <span>Rejuntes (1kg)</span>
+                <span>Rejuntes (1 kg)</span>
                 <strong id="rejuntesBoleado">0</strong>
             </div>
 
             <div class="itemResultado">
-                <span>Espaçador Cruzeta</span>
+                <span>Cruzetas Necessárias</span>
                 <strong id="cruzetas">0</strong>
+            </div>
+
+            <div class="itemResultado">
+                <span>Pacotes de 100</span>
+                <strong id="pacotesCruzeta">0</strong>
             </div>
 
         </div>
 
-        <!-- Porcelanato -->
-        <div id="resultadoPorcelanato" class="grupoResultado">
+        <!-- PORCELANATO -->
+
+        <div class="grupoResultado" id="resultadoPorcelanato">
 
             <div class="itemResultado">
                 <span>Argamassas Necessárias</span>
@@ -138,18 +153,23 @@
             </div>
 
             <div class="itemResultado">
-                <span>Rejuntes (1kg)</span>
+                <span>Rejuntes (1 kg)</span>
                 <strong id="rejuntesPorcelanato">0</strong>
             </div>
 
             <div class="itemResultado">
-                <span>Espaçadores Nivelador</span>
+                <span>Conjuntos Nivelador</span>
                 <strong id="espacadoresPorcelanato">0</strong>
             </div>
 
             <div class="itemResultado">
-                <span>Cunhas</span>
-                <strong id="cunhasPorcelanato">0</strong>
+                <span>Pacotes de 50</span>
+                <strong id="pacotes50Porcelanato">0</strong>
+            </div>
+
+            <div class="itemResultado">
+                <span>Pacotes de 100</span>
+                <strong id="pacotes100Porcelanato">0</strong>
             </div>
 
         </div>
